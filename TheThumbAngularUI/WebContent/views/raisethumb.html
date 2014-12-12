@@ -1,0 +1,41 @@
+<h2>Raise a thumb</h2>
+<form novalidate name="raiseAThumbForm" class="form-horizontal" >
+  <div ng-class="{'has-error' : raiseAThumbForm.origin.$invalid && raiseAThumbForm.origin.$dirty}">
+    <label class="control-label" for="origin">From</label>    
+    <div class="row">   
+      <div class="col-md-2">      
+        <input id="origin" name="origin" ng-g-place-autocomplete details="newThumb.originFull" ng-model="newThumb.originText" placeholder="From" required></input>        
+      </div>
+      <p class="help-block" ng-show="!newThumb.originFull">Choose origin.</p>      
+    </div>                              
+  </div>    
+
+  <div ng-class="{'has-error' : raiseAThumbForm.destination.$invalid && raiseAThumbForm.destination.$dirty}">
+    <label class="control-label" for="origin">To</label>    
+    <div class="row">   
+      <div class="col-md-2">      
+        <input id="destination" name="destination" ng-g-place-autocomplete details="newThumb.destinationFull" ng-model="newThumb.destinationText" placeholder="To" required></input>        
+      </div>
+      <p class="help-block" ng-show="!newThumb.destinationFull">Choose destination.</p>      
+    </div>                              
+  </div>    
+
+  <div ng-class="{'has-error' : raiseAThumbForm.date.$invalid && raiseAThumbForm.date.$dirty}">
+    <label class="control-label" for="date">When</label>     
+    <div class="row">                                 
+      <div class="col-md-2">      
+        <p class="input-group input-group-sm">
+          <input class="form-control" id="date" name="date" type="text" ng-focus="open($event)" ng-model="newThumb.thumb.date" datepicker-popup="dd-MMMM-yyyy" is-open="opened" min-date="minDate" ng-required="true"></input>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>        
+      <p class="help-block" ng-show="raiseAThumbForm.date.$error.required">Select a date</p>      
+    </div>      
+  </div>
+           
+  <br>   
+  <button ng-click="raiseThumb()" ng-disabled="newRideForm.$invalid || !newThumb.originFull || !newThumb.destinationFull">Raise Thumb</button>    
+    
+  </form>

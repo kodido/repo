@@ -1,0 +1,54 @@
+<h2>New Ride</h2>
+<form novalidate name="newRideForm" class="form-horizontal">         
+  <div ng-class="{'has-error' : newRideForm.origin.$invalid && newRideForm.origin.$dirty}">
+    <label class="control-label" for="origin">From</label>    
+    <div class="row">   
+      <div class="col-md-2">      
+        <input id="origin" name="origin" ng-g-place-autocomplete details="newRide.originFull" ng-model="newRide.originText" details="newRide.origin.details"  placeholder="From" required></input>        
+      </div>
+      <p class="help-block" ng-show="!newRide.originFull">Choose origin.</p>      
+    </div>                              
+  </div>    
+    
+    
+  <div ng-class="{'has-error' : newRideForm.destination.$invalid && newRideForm.destination.$dirty}">
+    <label class="control-label" for="destination">To</label>      
+    <div class="row">  
+      <div class="col-md-2">             
+        <input id="destination" name="destination" type="text" ng-g-place-autocomplete details="newRide.destinationFull" ng-model="newRide.destinationText" placeholder="To" required></input>
+      </div>
+      <p class="help-block" ng-show="!newRide.destinationFull">Choose destination.</p>                              
+    </div> 
+  </div>  
+
+  <div ng-class="{'has-error' : newRideForm.date.$invalid && newRideForm.date.$dirty}">
+    <label class="control-label" for="date">When</label>     
+    <div class="row">                                 
+      <div class="col-md-2">      
+        <p class="input-group input-group-sm">
+          <input class="form-control" id="date" name="date" type="text" ng-focus="open($event)" ng-model="newRide.ride.date" datepicker-popup="dd-MMMM-yyyy" is-open="opened" min-date="minDate" ng-required="true"></input>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>        
+      <p class="help-block" ng-show="newRideForm.date.$error.required">Select a date</p>      
+    </div>      
+  </div>
+     
+
+  
+  <div ng-class="{'has-error' : newRideForm.capacity.$invalid && newRideForm.capacity.$dirty}">
+    <label class="control-label" for="date">Free seats</label>                   
+    <div class="row">
+      <div class="col-md-2">          
+        <input id="capacity" name="capacity" type="number" ng-model="newRide.ride.capacity" ng-init="newRide.ride.capacity=1" placeholder="1" min="1" required></input>
+      </div>
+      <p class="help-block" ng-show="newRideForm.capacity.$error.required">Enter capacity.</p>     
+      <p class="help-block" ng-show="newRideForm.capacity.$error.min">It makes no sense to share a ride without seats.</p>                                                                          
+    </div>
+  </div>                
+  <br>    
+  <button ng-click="createRide()" ng-disabled="newRideForm.$invalid || !newRide.originFull || !newRide.destinationFull">Create</button>
+        
+</form>

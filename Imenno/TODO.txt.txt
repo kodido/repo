@@ -1,0 +1,6 @@
+ - Settings for setting the notification hour
+ - Actual check and days data (names to dates relationship?)
+ - Activity with list of contacts and dial/sms option
+ - remove from list
+ - Localization?
+ - Icons and design

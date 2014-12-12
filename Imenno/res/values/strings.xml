@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Imenno</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_name_day">NameDay</string>
+    <string name="name_days_label">Name Days Today</string>
+    <string name="name">Name</string>
+    <string name="textview">TextView</string>
+    <string name="name_days_notification_ticker">Name Days Today</string>
+    <string name="notification_content_title">Name Days Notification</string>
+    <string name="notification_content_text">Name Days Today</string>
+
+</resources>

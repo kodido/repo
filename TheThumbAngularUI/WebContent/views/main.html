@@ -1,0 +1,33 @@
+<h2><a ng-href="#users/{{userProfile.userName}}">{{userProfile.userName}}</a></h2>
+<br>    
+
+    <h2 class="sub-header">My ride requests</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Hitchhiker</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Status</th>               
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="request in rideRequests">
+            <td><a ng-href="#users/{{request.requester.userName}}">{{request.requester.userName}}</a></td>
+            <td>{{request.ride.origin.name}}</td>
+            <td>{{request.ride.destination.name}}</td>
+            <td>{{request.ride.date | date:'medium'}}</td>
+            <td>{{request.status}}</td>               
+            <td>
+                <button ng-click="accept($index)"><strong>Accept</strong></button>
+                <button ng-click="reject($index)"><strong>Reject</strong></button>          
+            </td>
+        </tr>
+        
+        </tbody>        
+    </table>
+    
+    <br> 
+    <a href="#rides/create">Create a ride</a>
+    
