@@ -3,3 +3,6 @@ build/
 
 .settings
 bin/
+
+.classpath
+.project
