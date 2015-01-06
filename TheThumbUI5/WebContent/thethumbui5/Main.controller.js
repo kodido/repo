@@ -1,4 +1,4 @@
-sap.ui.controller("thethumbui5.App", {
+sap.ui.controller("thethumbui5.Main", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
