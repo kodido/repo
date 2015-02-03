@@ -29,7 +29,8 @@
                     <li><a href="#thumbs/raise" title="Raise a Thumb">Raise a Thumb</a></li>
                     <li><a href="#allrides" title="All rides">All rides</a></li> 
                     <li><a href="#allthumbs" title="All thumbs">All thumbs</a></li>
-                    <li><a href="#notifications" title="Notifications">Notifications</a></li>                    
+                    <li><a href="#notifications" title="Notifications">Notifications</a></li>
+                    <li><a href="logout.jsp" title="Logout">Logout</a></li>                                                            
                 </ul>
             </div>
         </nav>
