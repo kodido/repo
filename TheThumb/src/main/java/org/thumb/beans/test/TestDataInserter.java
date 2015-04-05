@@ -93,7 +93,10 @@ public class TestDataInserter {
 			ride2Plovdiv.setPassengers(passengers2Plovdiv);
 			em.persist(ride2Plovdiv);
 			RideRequest rq = new RideRequest(ride2Plovdiv, stavri);
-			em.persist(rq);			
+			em.persist(rq);		
+			
+			UserProfile dia = new UserProfile("dia");
+			em.persist(dia);
 		}		
     }
     

@@ -1,0 +1,20 @@
+    <h2 class="sub-header">All thumbs</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Hitchhiker</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="thumb in thumbs">
+            <td>{{thumb.origin.name}}</td>
+            <td>{{thumb.destination.name}}</td>
+            <td>{{thumb.date | date:'medium'}}</td>
+            <td><a ng-href="#users/{{thumb.hitchiker.userName}}">{{thumb.hitchiker.userName}}</a></td>
+        </tr>
+        </tbody>
+    </table>   
+    <a href="#thumbs/raise">Raise a thumb</a>

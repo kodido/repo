@@ -1,0 +1,25 @@
+    <h2 class="sub-header">All rides</h2>    
+    
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Capacity</th>
+            <th>Driver</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="ride in rides">
+            <td>{{ride.origin.name}}</td>
+            <td>{{ride.destination.name}}</td>
+            <td>{{ride.date | date:'medium'}}</td>
+            <td>{{ride.capacity}}</td>            
+            <td><a ng-href="#users/{{ride.driver.userName}}">{{ride.driver.userName}}</a></td>
+            <td><button ng-click="requestRide($index)"><strong>Request</strong></button></td>            
+        </tr>
+        </tbody>
+    </table>
+       
+    <a href="#rides/create">Create new</a>

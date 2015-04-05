@@ -30,6 +30,9 @@ public class RidesBean {
 	
 	@EJB
 	PlacesBean placesBean;
+
+	@EJB
+	UserProfilesBean userProfilesBean;	
 	
     /**
      * Default constructor. 
@@ -48,7 +51,8 @@ public class RidesBean {
     @Consumes("application/json")
     public Ride addRide(Ride newRide) {
     	newRide.setOrigin(placesBean.getManagedPlace(newRide.getOrigin()));
-    	newRide.setDestination(placesBean.getManagedPlace(newRide.getDestination()));
+    	newRide.setDestination(placesBean.getManagedPlace(newRide.getDestination()));    	
+    	newRide.setDriver(userProfilesBean.getManagedUser(newRide.getDriver()));    	
     	if (newRide.getId() == null)
             em.persist(newRide);
     	else 

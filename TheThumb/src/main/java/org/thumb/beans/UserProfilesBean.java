@@ -11,6 +11,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import org.thumb.model.Place;
+import org.thumb.model.PlaceId;
 import org.thumb.model.RideRequest;
 import org.thumb.model.UserProfile;
 
@@ -50,6 +52,16 @@ public class UserProfilesBean {
     @Deprecated
 	public void deleteAllUsers() {
 		em.createNamedQuery("deleteAllUserProfiles").executeUpdate();				
+	}
+
+	public UserProfile getManagedUser(UserProfile unmanagedUser) {
+		UserProfile existing = em.find(UserProfile.class, unmanagedUser.getId());
+		if (existing == null) {
+			em.persist(unmanagedUser);
+			return unmanagedUser;
+		} else {
+			return existing;
+		}
 	}	        
 	
 }
